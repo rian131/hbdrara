@@ -6,6 +6,26 @@
   <title>HBD Rara</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
   <style>
+    .flower-petal {
+  position: fixed;
+  top: -50px;
+  width: 30px;
+  height: 30px;
+  background-image: url('https://i.ibb.co/FqtD1J5/flower.png'); /* Gambar bunga, bisa diganti sesuai selera */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall 5s linear infinite;
+  z-index: 999;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
     body {
       background-color: black;
       display: flex;
@@ -128,12 +148,29 @@
       document.getElementById("msg").style.display = "block";
       var music = document.getElementById("backgroundMusic");
       music.play();
+      startFlowers();
     }
 
     function hi() {
       document.getElementById("malu").style.display = "block";
       document.getElementById("klik2").style.display = "inline-block";
     }
+    function createFlower() {
+  const flower = document.createElement('div');
+  flower.classList.add('flower-petal');
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = (Math.random() * 2 + 3) + "s"; // antara 3-5 detik
+  document.body.appendChild(flower);
+
+  setTimeout(() => {
+    flower.remove();
+  }, 5000);
+}
+
+function startFlowers() {
+  const interval = setInterval(createFlower, 300);
+  setTimeout(() => clearInterval(interval), 5000); // efek selama 5 detik
+}
 
     function klik2() {
       window.location.href = "bunga.html";
