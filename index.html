@@ -1,125 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBD Rara</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        
-        .flower {
-        display: none;
-        animation: fadeInUp 0.8s ease-out forwards;
-        opacity: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HBD Rara</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        .hai{
-            text-align: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: white;
-            margin-top: 30px;
-        }
-        body{
-            background-color: black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .btn-danger{
-            width: 150px;
-            margin-top: 150px;
-            font-size: 25px;
-        
-        }
-        .btn-danger:hover{
-            transform: scale(1.1);
-        }
-        .msg{
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-        .card-body{
-            width: 500px;
-        }
-        .malu{
-            display: none;
-            padding-top: 5px;
-        }
-        .klik{
-            text-decoration: underline;
-            color: blue;
-            cursor: pointer;
-        }
-        .msg{
-            display: none;
-        }
-        .gedeinwoi{
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: white;
-            display: none;
-        }
-        .klikbunga{
-            display: none;
-            text-decoration: underline;
-            color: blue;
-            cursor: pointer;
-        }
-    </style>
+    .hai,
+    .gedeinwoi {
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      margin-top: 30px;
+    }
+
+    .gedeinwoi {
+      display: none;
+    }
+
+    .btn-danger {
+      width: 100%;
+      max-width: 200px;
+      margin-top: 100px;
+      font-size: 20px;
+    }
+
+    .btn-danger:hover {
+      transform: scale(1.1);
+    }
+
+    .msg {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      display: none;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .card-body {
+      width: 100%;
+    }
+
+    .malu {
+      display: none;
+      padding-top: 10px;
+    }
+
+    .klik,
+    .klikbunga {
+      text-decoration: underline;
+      color: blue;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .klikbunga {
+      display: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 576px) {
+      .hai,
+      .gedeinwoi {
+        font-size: 1.5rem;
+      }
+
+      .btn-danger {
+        font-size: 18px;
+        margin-top: 60px;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+      }
+
+      .card-text {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="song.mp3" type="audio/mp3">
-     
-      </audio>
-    <h1 class="hai">Happy Birthday !</h1>
-    <h1 class="gedeinwoi" id="gede">Naikin Volumenya woi !</h1>
-    <div>
-        <button class="btn btn-danger" onclick="tampil()">
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="song.mp3" type="audio/mp3" />
+  </audio>
 
-        Klik disini!
-    </button></div>
-    <div class="msg" id="msg">
-        <div class="card text-center">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Message</a>
-                </li>
-                
-               
-              </ul>
-            </div>
-            
-            <div class="card-body">
-              <h5 class="card-title">Happy Birthday For U</h5>
-              <img src="foto.jpg" width="300px">
-              <p class="card-text">Selamat ulang tahun, panjang umur, sehat selalu, semoga apa yang kamu inginkan tercapai makasih udah selalu sabar menghadapi we akwokawoak, mau tahu lanjutannya ?</p>
-              <div class="klik" onclick="hi()">Klik Disini</div>
-              <div class="malu" id="malu" >
-                <img src="kalogua.jpg"   width="300px">
-                <p class="card-text">maaf kalo cuma buat kayak gini, dan gak sebagus punya orang lain hehe</p>
-              </div>
-              <div class="klikbunga" onclick="klik2()" id="klik2">Klik lagi</div>
-            </div>
-            
+  <h1 class="hai">Happy Birthday !</h1>
+  <h1 class="gedeinwoi" id="gede">Naikin Volumenya woi !</h1>
+
+  <button class="btn btn-danger" onclick="tampil()">Klik disini!</button>
+
+  <div class="msg" id="msg">
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Message</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Happy Birthday For U</h5>
+        <img src="foto.jpg" alt="Foto" />
+        <p class="card-text">
+          Selamat ulang tahun, panjang umur, sehat selalu, semoga apa yang kamu inginkan tercapai. Makasih udah selalu sabar menghadapi we akwokawoak. Mau tahu lanjutannya?
+        </p>
+        <div class="klik" onclick="hi()">Klik Disini</div>
+        <div class="malu" id="malu">
+          <img src="kalogua.jpg" alt="Kalo Gua" />
+          <p class="card-text">Maaf kalo cuma buat kayak gini, dan gak sebagus punya orang lain hehe</p>
+        </div>
+        <div class="klikbunga" onclick="klik2()" id="klik2">Klik lagi</div>
+      </div>
     </div>
-    <script>
-        
-        function tampil(){
-            document.getElementById('gede').style.display = 'inline-block'
-            document.getElementById('msg').style.display = 'inline-block'
-            var music = document.getElementById('backgroundMusic');
-            music.play();
+  </div>
 
-        }
-        function hi (){
-            document.getElementById('malu').style.display = 'inline-block'
-            document.getElementById('klik2').style.display = 'inline-block'
-        }
-        function klik2(){
-            window.location.href = "bunga.html"
-        }
-    </script>
+  <script>
+    function tampil() {
+      document.getElementById("gede").style.display = "inline-block";
+      document.getElementById("msg").style.display = "block";
+      var music = document.getElementById("backgroundMusic");
+      music.play();
+    }
 
+    function hi() {
+      document.getElementById("malu").style.display = "block";
+      document.getElementById("klik2").style.display = "inline-block";
+    }
+
+    function klik2() {
+      window.location.href = "bunga.html";
+    }
+  </script>
 </body>
 </html>
