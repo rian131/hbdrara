@@ -86,7 +86,7 @@
       top: -50px;
       width: 30px;
       height: 30px;
-      background-image: url('https://i.ibb.co/FqtD1J5/flower.png');
+      background-image: url('./conffeti.png');
       background-size: cover;
       background-repeat: no-repeat;
       animation: fall linear infinite;
@@ -120,7 +120,7 @@
   </audio>
 
   <h1 class="hai">🎉 Happy Birthday, Rara! 🎂</h1>
-  <h2 class="gedeinwoi" id="gede">Naikin volumenya yaa 🎧</h2>
+  <h2 class="gedeinwoi" id="gede">Naikin volumenya woi</h2>
 
   <button class="btn btn-danger" onclick="tampil()">Klik di sini!</button>
 
@@ -164,7 +164,7 @@
       const flower = document.createElement("div");
       flower.classList.add("flower-petal");
       flower.style.left = Math.random() * 100 + "vw";
-      flower.style.animationDuration = (Math.random() * 5 + 7) + "s";
+      flower.style.animationDuration = (Math.random() * 5 + 10) + "s";
       document.body.appendChild(flower);
 
       setTimeout(() => {
@@ -174,7 +174,7 @@
 
     function startFlowers() {
       const interval = setInterval(createFlower, 300);
-      setTimeout(() => clearInterval(interval), 6000); // muncul bunga selama 6 detik
+      setTimeout(() => clearInterval(interval), 6000); // 
     }
   </script>
 
